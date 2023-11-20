@@ -1,16 +1,15 @@
 import { useReducer, useState } from "react";
 
 import "./App.css";
-import Name from "./Components/Name";
-import CardCom from "./Components/CardCom";
-import TodoApp from "./todo";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import UserDetails from "./UserDetails";
+import { Routes } from "./routes/routes";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+const router = createBrowserRouter(Routes);
 function App() {
-  const [fullName, setFullName] = useState("Jhon Doe");
   return (
-    <>
-      <TodoApp />
-    </>
+    <RouterProvider router={router}>
+      <UserDetails />
+    </RouterProvider>
   );
 }
 
